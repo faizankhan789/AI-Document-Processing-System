@@ -3,10 +3,15 @@ Document Classifier Module
 Classifies documents using pattern matching + SentenceTransformers embeddings
 """
 
+import os
 import re
 import numpy as np
 from typing import Dict, List, Tuple
 from sentence_transformers import SentenceTransformer
+
+# Enable offline mode if models are cached
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 
 # Category descriptions for classification

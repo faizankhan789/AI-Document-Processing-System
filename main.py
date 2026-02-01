@@ -12,6 +12,10 @@ import json
 import argparse
 from pathlib import Path
 
+# Enable offline mode (use cached models without internet)
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 

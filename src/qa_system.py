@@ -3,9 +3,14 @@ Question-Answering System (Bonus)
 Local QA using open-source LLM with RAG
 """
 
+import os
 import torch
 from typing import List, Tuple, Optional
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
+# Enable offline mode if models are cached
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 
 class LocalQASystem:

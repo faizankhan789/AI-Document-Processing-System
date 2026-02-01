@@ -3,10 +3,15 @@ Semantic Search Module
 Implements document retrieval using FAISS and SentenceTransformers
 """
 
+import os
 import numpy as np
 import faiss
 from typing import Dict, List, Tuple, Optional
 from sentence_transformers import SentenceTransformer
+
+# Enable offline mode if models are cached
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 
 class SemanticSearch:

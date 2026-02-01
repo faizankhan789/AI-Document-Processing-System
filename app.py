@@ -7,6 +7,11 @@ Gradio-based interface for document classification, extraction, and search
 import os
 import sys
 import json
+
+# Enable offline mode (use cached models without internet)
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
 import gradio as gr
 
 # Add src to path
@@ -166,7 +171,7 @@ def create_ui():
                     folder_input = gr.Textbox(
                         label="Folder Path",
                         placeholder="Enter path to folder containing PDF files",
-                        value="ai_engineer_dataset_generated (1) (2)"
+                        value="test_docs"
                     )
                     process_btn = gr.Button("🚀 Process Documents", variant="primary")
 
